@@ -10,8 +10,12 @@ import { Input } from '@/components/ui/input';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { useSearchParams } from 'next/navigation';
+
 export default function ProductsPage() {
-  const [searchQuery, setSearchQuery] = useState('');
+  const searchParams = useSearchParams();
+  const initialSearch = searchParams.get('search') || '';
+  const [searchQuery, setSearchQuery] = useState(initialSearch);
   const [sortBy, setSortBy] = useState<'default' | 'low' | 'high'>('default');
 
   const filteredProducts = useMemo(() => {

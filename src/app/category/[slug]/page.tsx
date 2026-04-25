@@ -7,24 +7,32 @@ import { use } from "react";
 import { ProductCard } from "@/components/ui/product-card";
 import { Button } from "@/components/ui/button";
 
-// Dummy data
-const DUMMY_PRODUCTS = [
-  { id: "1", name: "Midnight Truffle Fantasy", price: 1299, imageUrl: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=60", type: "eggless" },
-  { id: "2", name: "Red Velvet Romance", price: 999, imageUrl: "https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?w=800&q=60", type: "egg" },
-  { id: "3", name: "Classic Black Forest", price: 849, imageUrl: "https://images.unsplash.com/photo-1557308536-ee471ef2c390?w=800&q=60", type: "eggless" },
-  { id: "4", name: "Premium Mango Delight", price: 1499, imageUrl: "https://images.unsplash.com/photo-1519869325930-281384150729?w=800&q=60", type: "egg" },
-  { id: "5", name: "Strawberry Shortcake", price: 1099, imageUrl: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=60", type: "egg" },
-  { id: "6", name: "Chocolate Hazelnut Crunch", price: 1399, imageUrl: "https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?w=800&q=60", type: "eggless" },
-];
+import { PRODUCTS } from '@/lib/data/products';
 
 export default function CategoryPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = use(params);
-  const title = resolvedParams.slug.charAt(0).toUpperCase() + resolvedParams.slug.slice(1);
+  const slug = resolvedParams.slug.toLowerCase();
+  const title = slug.charAt(0).toUpperCase() + slug.slice(1);
   const [filterEggless, setFilterEggless] = useState(false);
+  const [priceRange, setPriceRange] = useState<string>('all');
 
-  const displayedProducts = filterEggless
-    ? DUMMY_PRODUCTS.filter((p) => p.type === "eggless")
-    : DUMMY_PRODUCTS;
+  const displayedProducts = PRODUCTS.filter((p) => {
+    // Basic slug filtering (Category/Occasion)
+    const matchesCategory = 
+      slug === "eggless" ? p.isEggless :
+      p.occasion?.toLowerCase() === slug || 
+      p.name.toLowerCase().includes(slug);
+    
+    if (!matchesCategory && slug !== "all") return false;
+    
+    if (filterEggless && !p.isEggless) return false;
+    
+    if (priceRange === 'under-500' && p.price >= 500) return false;
+    if (priceRange === '500-1000' && (p.price < 500 || p.price > 1000)) return false;
+    if (priceRange === 'over-1000' && p.price <= 1000) return false;
+    
+    return true;
+  });
 
   return (
     <div className="container mx-auto px-4 lg:px-8 py-12">
@@ -61,15 +69,43 @@ export default function CategoryPage({ params }: { params: Promise<{ slug: strin
                 <h3 className="font-medium mb-3">Price Range</h3>
                 <div className="space-y-2">
                   <label className="flex items-center gap-3 cursor-pointer group">
-                    <input type="radio" name="price" className="cursor-pointer" />
+                    <input 
+                      type="radio" 
+                      name="price" 
+                      className="cursor-pointer" 
+                      checked={priceRange === 'all'}
+                      onChange={() => setPriceRange('all')}
+                    />
+                    <span className="text-sm group-hover:text-primary transition-colors">All Prices</span>
+                  </label>
+                  <label className="flex items-center gap-3 cursor-pointer group">
+                    <input 
+                      type="radio" 
+                      name="price" 
+                      className="cursor-pointer" 
+                      checked={priceRange === 'under-500'}
+                      onChange={() => setPriceRange('under-500')}
+                    />
                     <span className="text-sm group-hover:text-primary transition-colors">Under ₹500</span>
                   </label>
                   <label className="flex items-center gap-3 cursor-pointer group">
-                    <input type="radio" name="price" className="cursor-pointer" />
+                    <input 
+                      type="radio" 
+                      name="price" 
+                      className="cursor-pointer" 
+                      checked={priceRange === '500-1000'}
+                      onChange={() => setPriceRange('500-1000')}
+                    />
                     <span className="text-sm group-hover:text-primary transition-colors">₹500 - ₹1000</span>
                   </label>
                   <label className="flex items-center gap-3 cursor-pointer group">
-                    <input type="radio" name="price" className="cursor-pointer" />
+                    <input 
+                      type="radio" 
+                      name="price" 
+                      className="cursor-pointer" 
+                      checked={priceRange === 'over-1000'}
+                      onChange={() => setPriceRange('over-1000')}
+                    />
                     <span className="text-sm group-hover:text-primary transition-colors">Over ₹1000</span>
                   </label>
                 </div>
@@ -97,7 +133,15 @@ export default function CategoryPage({ params }: { params: Promise<{ slug: strin
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <ProductCard {...product} />
+                <ProductCard 
+                  id={product.id}
+                  name={product.name}
+                  price={product.price}
+                  image={product.image}
+                  category={product.category}
+                  isEggless={product.isEggless}
+                  rating={product.rating}
+                />
               </motion.div>
             ))}
           </div>
@@ -109,7 +153,10 @@ export default function CategoryPage({ params }: { params: Promise<{ slug: strin
               <Button
                 variant="outline"
                 className="mt-4 rounded-full"
-                onClick={() => setFilterEggless(false)}
+                onClick={() => {
+                  setFilterEggless(false);
+                  setPriceRange('all');
+                }}
               >
                 Clear Filters
               </Button>
