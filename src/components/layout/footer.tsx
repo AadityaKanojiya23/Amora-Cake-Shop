@@ -3,9 +3,9 @@ import { Globe, Camera, MessageCircle } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="bg-secondary/30 pt-16 pb-8 border-t">
+    <footer className="bg-secondary/30 pt-12 lg:pt-16 pb-6 lg:pb-8 border-t">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="inline-block">
@@ -53,15 +53,15 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Newsletter</h3>
             <p className="text-sm text-muted-foreground mb-4">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
-            <form className="flex gap-2">
+            <form className="flex flex-col sm:flex-row gap-3">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 bg-background border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary"
+                className="flex-1 bg-background border rounded-md px-4 py-3 min-h-[44px] text-base sm:text-sm focus:outline-none focus:ring-1 focus:ring-primary"
               />
               <button
                 type="submit"
-                className="bg-primary text-primary-foreground px-4 py-2 rounded-md text-sm font-medium hover:bg-primary/90 transition-colors"
+                className="bg-primary text-primary-foreground px-6 py-3 min-h-[44px] rounded-md text-sm font-medium hover:bg-primary/90 transition-colors whitespace-nowrap w-full sm:w-auto"
               >
                 Subscribe
               </button>
@@ -69,11 +69,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+        <div className="border-t pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground text-center md:text-left">
           <p>© {new Date().getFullYear()} Amora Cake Shop. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="/privacy" className="hover:text-foreground transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-foreground transition-colors">Terms of Service</Link>
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
+            <Link href="/privacy" className="hover:text-foreground transition-colors p-2 sm:p-0">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-foreground transition-colors p-2 sm:p-0">Terms of Service</Link>
           </div>
         </div>
       </div>

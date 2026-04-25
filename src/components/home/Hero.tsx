@@ -62,7 +62,7 @@ export function Hero() {
   const slide = SLIDES[currentIndex];
 
   return (
-    <section className="relative w-full h-[calc(100vh-80px)] overflow-hidden bg-black">
+    <section className="relative w-full min-h-[calc(100dvh-80px)] lg:h-[calc(100dvh-80px)] overflow-hidden bg-black">
       {/* Background Slides */}
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
@@ -85,7 +85,7 @@ export function Hero() {
       <div className="container mx-auto px-4 lg:px-8 h-full relative z-10">
         <div className="grid lg:grid-cols-2 h-full items-center gap-12">
           {/* Left Content */}
-          <div className="flex flex-col justify-center max-w-2xl pt-10">
+          <div className="flex flex-col justify-center max-w-2xl py-12 lg:py-0 lg:pt-10">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`content-${currentIndex}`}
@@ -94,24 +94,24 @@ export function Hero() {
                 exit={{ opacity: 0, y: -30 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                <h1 className="text-6xl md:text-8xl font-black text-white leading-[1.1] tracking-tight mb-6">
+                <h1 className="text-5xl sm:text-6xl lg:text-8xl font-black text-white leading-[1.1] tracking-tight mb-4 sm:mb-6">
                   {slide.title} <br />
                   <span className="text-pink-500 italic drop-shadow-[0_0_15px_rgba(236,72,153,0.3)]">
                     {slide.highlight}
                   </span> <br />
                   {slide.suffix}
                 </h1>
-                <p className="text-xl text-gray-300 mb-10 max-w-lg leading-relaxed font-light">
+                <p className="text-lg sm:text-xl text-gray-300 mb-8 sm:mb-10 max-w-lg leading-relaxed font-light">
                   {slide.description}
                 </p>
               </motion.div>
             </AnimatePresence>
 
             {/* Fixed Buttons (Static) */}
-            <div className="flex flex-wrap gap-5">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-5 w-full sm:w-auto">
               <Button 
                 size="lg" 
-                className="h-16 px-10 rounded-full bg-gradient-to-r from-pink-500 to-rose-400 hover:from-pink-600 hover:to-rose-500 text-white font-bold text-lg shadow-[0_10px_30px_rgba(236,72,153,0.3)] border-none group transition-all duration-300 hover:scale-105"
+                className="w-full sm:w-auto h-14 sm:h-16 px-8 sm:px-10 rounded-full bg-gradient-to-r from-pink-500 to-rose-400 hover:from-pink-600 hover:to-rose-500 text-white font-bold text-lg shadow-[0_10px_30px_rgba(236,72,153,0.3)] border-none group transition-all duration-300 hover:scale-105"
               >
                 Order Now
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -120,11 +120,12 @@ export function Hero() {
                 href="https://www.instagram.com/amore_cakes_shop?igsh=MW5tMjJndTNycmU3OA==" 
                 target="_blank" 
                 rel="noopener noreferrer"
+                className="w-full sm:w-auto"
               >
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="h-16 px-10 rounded-full bg-transparent border-2 border-white/20 text-white hover:bg-white hover:text-black font-bold text-lg backdrop-blur-md transition-all duration-300 hover:scale-105"
+                  className="w-full sm:w-auto h-14 sm:h-16 px-8 sm:px-10 rounded-full bg-transparent border-2 border-white/20 text-white hover:bg-white hover:text-black font-bold text-lg backdrop-blur-md transition-all duration-300 hover:scale-105"
                 >
                   About us
                 </Button>

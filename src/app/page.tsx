@@ -78,7 +78,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col gap-24 pb-24">
+    <div className="flex flex-col gap-16 lg:gap-24 pb-16 lg:pb-24">
       <Hero />
 
       {/* Dynamic Menu Section */}
@@ -90,14 +90,14 @@ export default function Home() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.6, ease: "circOut" }}
-            className="overflow-hidden bg-primary/5 py-24"
+            className="overflow-hidden bg-primary/5 py-16 lg:py-24"
           >
             <div className="container mx-auto px-4 lg:px-8">
               <div className="text-center mb-16">
                 <motion.h2 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="text-4xl md:text-6xl font-bold mb-4"
+                  className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4"
                 >
                   Our Premium Menu
                 </motion.h2>
@@ -108,7 +108,7 @@ export default function Home() {
                 ></motion.div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-10">
                 {MENU_CAKES.map((cake, index) => (
                   <motion.div
                     key={cake.name}
@@ -149,7 +149,7 @@ export default function Home() {
           className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4"
         >
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-2">Shop by Occasion</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">Shop by Occasion</h2>
             <p className="text-muted-foreground">Find the perfect cake for your special moments.</p>
           </div>
         </motion.div>
@@ -188,7 +188,7 @@ export default function Home() {
           className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4"
         >
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-2">Trending Masterpieces</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2">Trending Masterpieces</h2>
             <p className="text-muted-foreground">Our most loved and highly rated cakes.</p>
           </div>
           <Button variant="ghost" className="text-primary hover:bg-primary/10 rounded-full">
@@ -214,7 +214,7 @@ export default function Home() {
 
       {/* Trust Banner */}
       <section className="container mx-auto px-4 lg:px-8">
-        <div className="bg-primary/5 rounded-3xl p-8 md:p-12 border border-primary/10 text-center">
+        <div className="bg-primary/5 rounded-3xl p-6 sm:p-8 md:p-12 border border-primary/10 text-center">
           <div className="flex justify-center gap-1 mb-6">
             {[1, 2, 3, 4, 5].map((star) => (
               <Star key={star} className="w-8 h-8 fill-primary text-primary" />
@@ -224,7 +224,7 @@ export default function Home() {
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
             Join over 50,000+ happy customers who have celebrated their special moments with Amora Cake Shop.
           </p>
-          <div className="flex flex-wrap justify-center gap-8 md:gap-16 text-center">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-16 text-center">
             <div>
               <p className="text-3xl font-bold text-foreground">50k+</p>
               <p className="text-sm text-muted-foreground">Happy Customers</p>

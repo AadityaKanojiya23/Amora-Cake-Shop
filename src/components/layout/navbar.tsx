@@ -92,9 +92,9 @@ export function Navbar() {
             <ThemeToggle />
 
             <Link href="/cart">
-              <Button variant="ghost" size="icon" className="relative rounded-full">
+              <Button variant="ghost" size="icon" className="relative rounded-full h-11 w-11">
                 <ShoppingCart className="w-5 h-5" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-primary rounded-full"></span>
+                <span className="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
               </Button>
             </Link>
 
@@ -161,10 +161,10 @@ export function Navbar() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden rounded-full"
+              className="md:hidden rounded-full h-11 w-11"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </Button>
           </div>
         </div>
@@ -182,7 +182,7 @@ export function Navbar() {
                 <Input
                   type="text"
                   placeholder="Search for cakes..."
-                  className="pr-10 rounded-full"
+                  className="pr-10 rounded-full min-h-[44px] text-base"
                 />
                 <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               </div>
@@ -190,7 +190,7 @@ export function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  className="text-lg font-medium text-foreground py-2 border-b border-border/50"
+                  className="text-lg font-medium text-foreground py-3 border-b border-border/50"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.name}
@@ -198,34 +198,34 @@ export function Navbar() {
               ))}
               {isAuthenticated ? (
                 <>
-                  <div className="px-2 py-3 border-b border-border/50">
-                    <p className="font-semibold">{user?.name}</p>
+                  <div className="px-2 py-4 border-b border-border/50">
+                    <p className="font-semibold text-lg">{user?.name}</p>
                     <p className="text-sm text-muted-foreground">{user?.email}</p>
                   </div>
                   <Link
                     href="/profile"
-                    className="text-lg font-medium text-foreground py-2 border-b border-border/50"
+                    className="text-lg font-medium text-foreground py-3 border-b border-border/50"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     My Profile
                   </Link>
                   <Link
                     href="/orders"
-                    className="text-lg font-medium text-foreground py-2 border-b border-border/50"
+                    className="text-lg font-medium text-foreground py-3 border-b border-border/50"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     My Orders
                   </Link>
                   <Link
                     href="/track"
-                    className="text-lg font-medium text-foreground py-2 border-b border-border/50"
+                    className="text-lg font-medium text-foreground py-3 border-b border-border/50"
                     onClick={() => setMobileMenuOpen(false)}
                   >
                     Track Order
                   </Link>
                   <button
                     onClick={handleLogout}
-                    className="text-lg font-medium text-red-500 py-2 text-left"
+                    className="text-lg font-medium text-red-500 py-3 text-left"
                   >
                     Logout
                   </button>
@@ -233,7 +233,7 @@ export function Navbar() {
               ) : (
                 <Link
                   href="/login"
-                  className="text-lg font-medium text-foreground py-2"
+                  className="text-lg font-medium text-foreground py-3"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Sign In

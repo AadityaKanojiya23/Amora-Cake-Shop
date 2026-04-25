@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -6,6 +6,13 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
 const outfit = Outfit({ subsets: ["latin"] });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false, // Optional: Often used in mobile-first web apps to prevent zoom
+};
 
 export const metadata: Metadata = {
   title: "Amora Cake Shop | Premium Bakery & eCommerce",
@@ -19,11 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${outfit.className} min-h-screen flex flex-col antialiased`}>
+      <body className={`${outfit.className} min-h-screen flex flex-col antialiased overflow-x-hidden w-full`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="vanilla"
+          themes={["vanilla", "chocolate", "rose", "matcha", "red-velvet"]}
           disableTransitionOnChange
         >
           <Navbar />
