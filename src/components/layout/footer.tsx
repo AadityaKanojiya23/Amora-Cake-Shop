@@ -10,7 +10,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="inline-block">
               <span className="text-2xl font-bold tracking-tight text-primary">
-                Amora <span className="text-foreground">Cake Shop</span>
+                Amore <span className="text-foreground">Cake Shop</span>
               </span>
             </Link>
             <p className="text-muted-foreground text-sm max-w-xs">
@@ -70,7 +70,7 @@ export function Footer() {
         </div>
 
         <div className="border-t pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-sm text-muted-foreground text-center md:text-left">
-          <p>© {new Date().getFullYear()} Amora Cake Shop. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Amore Cake Shop. All rights reserved.</p>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             <Link href="/privacy" className="hover:text-foreground transition-colors p-2 sm:p-0">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-foreground transition-colors p-2 sm:p-0">Terms of Service</Link>

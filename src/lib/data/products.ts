@@ -16,9 +16,9 @@ const CAKE_NAMES = [
   "Pineapple Sunshine", "Wild Blueberry Burst", "Madagascar Vanilla Bean", "Persian Pistachio Rose",
   "Salted Caramel Crunch", "Roasted Hazelnut Heaven", "Fresh Strawberry Swirl", "Sicilian Lemon Zest",
   "Italian Coffee Mocha", "French Opera Cake", "Classic Tiramisu", "Rainbow Celebration",
-  "Nutella Rocher Fusion", "Honey Walnut Fudge", "Crunchy KitKat Overload", "Amora Ferrero Dream",
+  "Nutella Rocher Fusion", "Honey Walnut Fudge", "Crunchy KitKat Overload", "Amore Ferrero Dream",
   "White Chocolate Raspberry", "Dark Forest Gateau", "Mocha Almond Fudge", "Pink Velvet Bliss",
-  "Tropical Coconut Lime", "Banoffee Special", "Peanut Butter Joy", "Cookies & Cream Amora",
+  "Tropical Coconut Lime", "Banoffee Special", "Peanut Butter Joy", "Cookies & Cream Amore",
   "Matcha Green Tea", "Spiced Apple Crumble"
 ];
 

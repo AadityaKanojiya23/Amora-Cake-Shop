@@ -57,14 +57,14 @@ export function Navbar() {
             <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 shadow-sm bg-white group-hover:border-primary transition-colors duration-300">
               <Image 
                 src="/logo.png" 
-                alt="Amora Logo" 
+                alt="Amore Logo" 
                 fill 
                 className="object-cover"
               />
             </div>
             <div className="flex flex-col">
               <span className="text-2xl font-bold tracking-tight text-[#0f2a4a] font-serif leading-none">
-                Amora <span className="text-primary">Cake</span>
+                Amore <span className="text-primary">Cake</span>
               </span>
               <span className="text-[10px] uppercase tracking-[0.3em] font-black text-[#7a8a94] mt-1.5">
                 PREMIUM CAKE SHOP

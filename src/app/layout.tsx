@@ -16,7 +16,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Amora Cake Shop | Premium Bakery & eCommerce",
+  title: "Amore Cake Shop | Premium Bakery & eCommerce",
   description: "Next-gen premium cake delivery platform.",
 };
 

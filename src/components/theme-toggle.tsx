@@ -12,7 +12,7 @@ export function ThemeToggle() {
   const dropdownRef = React.useRef<HTMLDivElement>(null);
 
   const themes = [
-    { id: "vanilla", name: "Amora Official", color: "#fff9e6" },
+    { id: "vanilla", name: "Amore Official", color: "#fff9e6" },
     { id: "chocolate", name: "Chocolate", color: "#291d17" },
     { id: "rose", name: "Rose Cake", color: "#f9eef2" },
     { id: "matcha", name: "Matcha", color: "#f1f8ee" },

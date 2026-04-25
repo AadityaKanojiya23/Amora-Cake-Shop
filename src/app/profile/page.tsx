@@ -147,7 +147,7 @@ export default function ProfilePage() {
                 <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10">
                   <h3 className="font-bold text-primary mb-2">Premium Member</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                    You're a member of our Amora Cake Club. Enjoy free delivery and priority booking for custom cakes.
+                    You're a member of our Amore Cake Club. Enjoy free delivery and priority booking for custom cakes.
                   </p>
                 </div>
               </div>

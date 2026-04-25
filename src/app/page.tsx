@@ -222,7 +222,7 @@ export default function Home() {
           </div>
           <h2 className="text-2xl md:text-4xl font-bold mb-4">"The best cake I've ever had!"</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-            Join over 50,000+ happy customers who have celebrated their special moments with Amora Cake Shop.
+            Join over 50,000+ happy customers who have celebrated their special moments with Amore Cake Shop.
           </p>
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-16 text-center">
             <div>
