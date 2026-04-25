@@ -31,7 +31,6 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="vanilla"
-          forcedTheme="vanilla"
           enableSystem={false}
           themes={["vanilla", "chocolate", "rose", "matcha", "red-velvet"]}
           disableTransitionOnChange
