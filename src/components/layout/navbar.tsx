@@ -89,17 +89,22 @@ export function Navbar() {
           {/* Actions */}
           <div className="flex items-center gap-4">
             <div className="hidden lg:flex relative w-64">
-             <Input
-              type="text"
-              placeholder="Search for cakes..."
-              className="pr-10 rounded-full 
-              bg-white 
-              text-foreground 
-              placeholder:text-foreground/40
-              border border-primary/20
-              focus:outline-none focus:ring-2 focus:ring-primary/40 
-              focus:border-primary transition-all duration-300 shadow-sm"
-            />
+              <Input
+                type="text"
+                placeholder="Search for cakes..."
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    router.push(`/products?search=${encodeURIComponent(e.currentTarget.value)}`);
+                  }
+                }}
+                className="pr-10 rounded-full 
+                bg-white 
+                text-foreground 
+                placeholder:text-foreground/40
+                border border-primary/20
+                focus:outline-none focus:ring-2 focus:ring-primary/40 
+                focus:border-primary transition-all duration-300 shadow-sm"
+              />
               <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             </div>
 

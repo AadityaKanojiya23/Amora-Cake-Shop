@@ -37,8 +37,8 @@
 }
 
 @layer base {
-  :root, .vanilla {
-    /* Logo-Inspired Yellow/Orange Theme */
+  :root {
+    /* Logo-Inspired Yellow/Orange Theme - DEFAULT */
     --background: 48 100% 94%; /* Distinct yellow background */
     --foreground: 212 66% 17%; /* Dark blue from logo text */
     --card: 0 0% 100%;

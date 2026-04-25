@@ -29,11 +29,11 @@ export const PRODUCTS: Product[] = Array.from({ length: 50 }, (_, i) => {
   return {
     id: `cake-${i + 1}`,
     name: i >= 30 ? `${nameBase} Edition ${i - 29}` : nameBase,
-    price: 599 + (Math.floor(Math.random() * 25) * 100),
+    price: 599 + ((i * 137) % 25) * 100, // Deterministic
     category: "Cake" as const,
     image: `https://images.unsplash.com/photo-${baseId}?auto=format&fit=crop&q=80&w=600&sig=${i}`,
     description: "Handcrafted with the finest ingredients for an unforgettable taste experience.",
-    rating: 4.2 + (Math.random() * 0.8),
+    rating: 4.2 + ((i * 7) % 8) / 10, // Deterministic
     isBestSeller: i % 8 === 0,
     isNew: i % 12 === 0,
   };
