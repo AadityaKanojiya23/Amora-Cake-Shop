@@ -78,7 +78,7 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition relative group"
+                className="text-sm font-medium text-foreground/70 hover:text-primary transition-all duration-300 relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
@@ -93,10 +93,10 @@ export function Navbar() {
               type="text"
               placeholder="Search for cakes..."
               className="pr-10 rounded-full 
-              bg-white dark:bg-black/40 
-              text-black dark:text-white 
-              placeholder:text-gray-500 dark:placeholder:text-gray-400
-              border border-gray-300 dark:border-white/10 
+              bg-white 
+              text-foreground 
+              placeholder:text-foreground/40
+              border border-primary/20
               focus:outline-none focus:ring-2 focus:ring-primary/40 
               focus:border-primary transition-all duration-300 shadow-sm"
             />
@@ -116,9 +116,9 @@ export function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setProfileOpen(!profileOpen)}
-                  className="flex items-center gap-2 p-1 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
+                  className="flex items-center gap-2 p-1 rounded-full hover:bg-foreground/5 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold shadow-md border-2 border-white dark:border-gray-800">
+                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold shadow-md border-2 border-background">
                     {user?.name?.charAt(0).toUpperCase()}
                   </div>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${profileOpen ? 'rotate-180' : ''}`} />
@@ -126,46 +126,46 @@ export function Navbar() {
 
                 <AnimatePresence>
                   {profileOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 10, scale: 0.95 }}
-                      className="absolute right-0 mt-3 w-56 bg-white dark:bg-gray-900 rounded-2xl shadow-xl border border-gray-100 dark:border-white/10 py-2 z-[100] overflow-hidden"
-                    >
-                      <div className="px-4 py-3 border-b border-gray-100 dark:border-white/10 mb-2">
-                        <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">{user?.name}</p>
-                        <p className="text-xs text-gray-500 truncate">{user?.email}</p>
-                      </div>
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        className="absolute right-0 mt-3 w-56 bg-card rounded-2xl shadow-xl border border-border py-2 z-[100] overflow-hidden"
+                      >
+                        <div className="px-4 py-3 border-b border-border mb-2">
+                          <p className="text-sm font-semibold text-foreground truncate">{user?.name}</p>
+                          <p className="text-xs text-muted-foreground truncate">{user?.email}</p>
+                        </div>
 
-                      <Link href="/profile" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary transition-colors">
-                        <UserCircle className="w-4 h-4" />
-                        My Profile
-                      </Link>
-                      <Link href="/orders" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:text-pink-600 dark:hover:text-pink-400 transition-colors">
-                        <Package className="w-4 h-4" />
-                        My Orders
-                      </Link>
-                      <Link href="/track" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:text-pink-600 dark:hover:text-pink-400 transition-colors">
-                        <MapPin className="w-4 h-4" />
-                        Track Order
-                      </Link>
-                      
-                      <div className="border-t border-gray-100 dark:border-white/10 mt-2 pt-2">
-                        <button 
-                          onClick={handleLogout}
-                          className="w-full flex items-center gap-3 px-4 py-2 text-sm text-red-600 hover:bg-red-50 dark:hover:bg-red-900/10 transition-colors"
-                        >
-                          <LogOut className="w-4 h-4" />
-                          Logout
-                        </button>
-                      </div>
-                    </motion.div>
+                        <Link href="/profile" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground/70 hover:bg-primary/10 hover:text-primary transition-colors">
+                          <UserCircle className="w-4 h-4" />
+                          My Profile
+                        </Link>
+                        <Link href="/orders" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground/70 hover:bg-primary/10 hover:text-primary transition-colors">
+                          <Package className="w-4 h-4" />
+                          My Orders
+                        </Link>
+                        <Link href="/track" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-foreground/70 hover:bg-primary/10 hover:text-primary transition-colors">
+                          <MapPin className="w-4 h-4" />
+                          Track Order
+                        </Link>
+                        
+                        <div className="border-t border-border mt-2 pt-2">
+                          <button 
+                            onClick={handleLogout}
+                            className="w-full flex items-center gap-3 px-4 py-2 text-sm text-red-600 hover:bg-red-50 transition-colors"
+                          >
+                            <LogOut className="w-4 h-4" />
+                            Logout
+                          </button>
+                        </div>
+                      </motion.div>
                   )}
                 </AnimatePresence>
               </div>
             ) : (
               <Link href="/login" className="hidden sm:block">
-                <Button className="rounded-full bg-primary hover:bg-primary/90 text-white px-6 shadow-md shadow-primary/20 dark:shadow-none">
+                <Button className="rounded-full bg-primary hover:bg-primary/90 text-white px-6 shadow-md shadow-primary/20">
                   Login
                 </Button>
               </Link>
