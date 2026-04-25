@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ShoppingCart, Search, Menu, User, X, LogOut, Package, MapPin, UserCircle, ChevronDown } from "lucide-react";
@@ -45,17 +46,30 @@ export function Navbar() {
   transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
   isScrolled
-    ? "bg-white/70 dark:bg-black/70 backdrop-blur-xl shadow-lg border-b border-pink-100 dark:border-white/10"
+    ? "bg-white/70 dark:bg-black/70 backdrop-blur-xl shadow-lg border-b border-primary/10 dark:border-white/10"
     : "bg-transparent"
 }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold tracking-wide bg-gradient-to-r from-pink-500 to-rose-400 bg-clip-text text-transparent">
-            Amora <span className="text-gray-800 dark:text-white">Cake Shop</span>
-</span>
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 shadow-sm bg-white group-hover:border-primary transition-colors duration-300">
+              <Image 
+                src="/logo.png" 
+                alt="Amora Logo" 
+                fill 
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-2xl font-bold tracking-tight text-[#0f2a4a] font-serif leading-none">
+                Amora <span className="text-primary">Cake</span>
+              </span>
+              <span className="text-[10px] uppercase tracking-[0.3em] font-black text-[#7a8a94] mt-1.5">
+                PREMIUM CAKE SHOP
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -64,10 +78,10 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-pink-500 transition relative group"
+                className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary transition relative group"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-pink-500 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
           </nav>
@@ -83,8 +97,8 @@ export function Navbar() {
               text-black dark:text-white 
               placeholder:text-gray-500 dark:placeholder:text-gray-400
               border border-gray-300 dark:border-white/10 
-              focus:outline-none focus:ring-2 focus:ring-pink-400 
-              focus:border-pink-400 transition-all duration-300 shadow-sm"
+              focus:outline-none focus:ring-2 focus:ring-primary/40 
+              focus:border-primary transition-all duration-300 shadow-sm"
             />
               <Search className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             </div>
@@ -104,7 +118,7 @@ export function Navbar() {
                   onClick={() => setProfileOpen(!profileOpen)}
                   className="flex items-center gap-2 p-1 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 to-rose-400 flex items-center justify-center text-white font-bold shadow-md border-2 border-white dark:border-gray-800">
+                  <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white font-bold shadow-md border-2 border-white dark:border-gray-800">
                     {user?.name?.charAt(0).toUpperCase()}
                   </div>
                   <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${profileOpen ? 'rotate-180' : ''}`} />
@@ -123,7 +137,7 @@ export function Navbar() {
                         <p className="text-xs text-gray-500 truncate">{user?.email}</p>
                       </div>
 
-                      <Link href="/profile" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:bg-pink-50 dark:hover:bg-pink-900/20 hover:text-pink-600 dark:hover:text-pink-400 transition-colors">
+                      <Link href="/profile" onClick={() => setProfileOpen(false)} className="flex items-center gap-3 px-4 py-2 text-sm text-gray-600 dark:text-gray-300 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary transition-colors">
                         <UserCircle className="w-4 h-4" />
                         My Profile
                       </Link>
@@ -151,7 +165,7 @@ export function Navbar() {
               </div>
             ) : (
               <Link href="/login" className="hidden sm:block">
-                <Button className="rounded-full bg-pink-500 hover:bg-pink-600 text-white px-6 shadow-md shadow-pink-200 dark:shadow-none">
+                <Button className="rounded-full bg-primary hover:bg-primary/90 text-white px-6 shadow-md shadow-primary/20 dark:shadow-none">
                   Login
                 </Button>
               </Link>

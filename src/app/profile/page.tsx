@@ -34,15 +34,15 @@ export default function ProfilePage() {
           className="bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-gray-100 dark:border-white/10 overflow-hidden"
         >
           {/* Profile Header */}
-          <div className="relative h-48 bg-gradient-to-r from-pink-500 to-rose-400">
+          <div className="relative h-48 bg-primary">
             <div className="absolute -bottom-16 left-8 md:left-12">
               <div className="relative">
                 <div className="w-32 h-32 rounded-3xl bg-white dark:bg-gray-800 p-2 shadow-xl">
-                  <div className="w-full h-full rounded-2xl bg-gradient-to-br from-pink-100 to-rose-50 flex items-center justify-center text-4xl font-bold text-pink-500 border-2 border-pink-50">
+                  <div className="w-full h-full rounded-2xl bg-primary/10 flex items-center justify-center text-4xl font-bold text-primary border-2 border-primary/5">
                     {user?.name?.charAt(0).toUpperCase()}
                   </div>
                 </div>
-                <button className="absolute bottom-2 right-2 p-2 bg-white dark:bg-gray-700 rounded-xl shadow-lg border border-gray-100 dark:border-white/10 text-gray-600 dark:text-gray-300 hover:text-pink-500 transition-colors">
+                <button className="absolute bottom-2 right-2 p-2 bg-white dark:bg-gray-700 rounded-xl shadow-lg border border-gray-100 dark:border-white/10 text-gray-600 dark:text-gray-300 hover:text-primary transition-colors">
                   <Camera className="w-4 h-4" />
                 </button>
               </div>
@@ -59,7 +59,7 @@ export default function ProfilePage() {
               {!isEditing ? (
                 <Button 
                   onClick={() => setIsEditing(true)}
-                  className="rounded-xl border-pink-200 text-pink-600 hover:bg-pink-50 dark:hover:bg-pink-900/10"
+                  className="rounded-xl border-primary/20 text-primary hover:bg-primary/5 dark:hover:bg-primary/10"
                   variant="outline"
                 >
                   <Edit2 className="w-4 h-4 mr-2" />
@@ -77,7 +77,7 @@ export default function ProfilePage() {
                   </Button>
                   <Button 
                     onClick={handleSave}
-                    className="rounded-xl bg-pink-500 hover:bg-pink-600 text-white"
+                    className="rounded-xl bg-primary hover:bg-primary/90 text-white"
                   >
                     <Check className="w-4 h-4 mr-2" />
                     Save Changes
@@ -144,8 +144,8 @@ export default function ProfilePage() {
                   </div>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-gradient-to-br from-pink-500/5 to-rose-400/5 border border-pink-100 dark:border-pink-900/10">
-                  <h3 className="font-bold text-pink-600 mb-2">Premium Member</h3>
+                <div className="p-6 rounded-2xl bg-primary/5 border border-primary/10">
+                  <h3 className="font-bold text-primary mb-2">Premium Member</h3>
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                     You're a member of our Amora Cake Club. Enjoy free delivery and priority booking for custom cakes.
                   </p>

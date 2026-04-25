@@ -33,7 +33,7 @@ export default function OrdersPage() {
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
             <Input 
               placeholder="Search orders..." 
-              className="pl-10 h-11 rounded-xl border-gray-200 dark:bg-black/40 dark:border-white/10 focus:ring-pink-500"
+              className="pl-10 h-11 rounded-xl border-gray-200 dark:bg-black/40 dark:border-white/10 focus:ring-primary"
             />
           </div>
         </div>
@@ -45,7 +45,7 @@ export default function OrdersPage() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-white/10 overflow-hidden hover:shadow-xl hover:shadow-pink-50 dark:hover:shadow-none transition-all duration-300"
+              className="group bg-white dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-white/10 overflow-hidden hover:shadow-xl hover:shadow-primary/5 dark:hover:shadow-none transition-all duration-300"
             >
               <div className="p-6 md:p-8 flex flex-col md:flex-row gap-8 items-center">
                 {/* Product Image */}
@@ -66,7 +66,7 @@ export default function OrdersPage() {
                     <span className="text-sm text-gray-500 font-medium">{order.id}</span>
                   </div>
                   
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-pink-600 transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
                     {order.cakeName}
                   </h3>
                   
@@ -97,7 +97,7 @@ export default function OrdersPage() {
               
               <div className="px-8 py-4 bg-gray-50 dark:bg-black/20 border-t border-gray-100 dark:border-white/10 flex justify-between items-center text-xs text-gray-500">
                 <p>Standard Delivery: Arriving between 2 PM - 4 PM</p>
-                <div className="flex items-center gap-1 cursor-pointer hover:text-pink-500 transition-colors font-medium">
+                <div className="flex items-center gap-1 cursor-pointer hover:text-primary transition-colors font-medium">
                   Rate Cake <ChevronRight className="w-3 h-3" />
                 </div>
               </div>

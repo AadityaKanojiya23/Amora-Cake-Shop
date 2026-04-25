@@ -19,17 +19,17 @@ export default function TrackOrderPage() {
   return (
     <ProtectedRoute>
       <div className="container mx-auto px-4 py-12 max-w-4xl">
-        <Link href="/orders" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-pink-500 transition-colors mb-8">
+        <Link href="/orders" className="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-primary transition-colors mb-8">
           <ChevronLeft className="w-4 h-4" />
           Back to My Orders
         </Link>
 
-        <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl shadow-pink-100 dark:shadow-none border border-gray-100 dark:border-white/10 overflow-hidden">
+        <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl shadow-primary/10 dark:shadow-none border border-gray-100 dark:border-white/10 overflow-hidden">
           {/* Header */}
           <div className="p-8 md:p-12 border-b border-gray-100 dark:border-white/10 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-900/50">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
               <div>
-                <p className="text-pink-500 font-bold text-sm uppercase tracking-wider mb-2">Order Tracking</p>
+                <p className="text-primary font-bold text-sm uppercase tracking-wider mb-2">Order Tracking</p>
                 <h1 className="text-3xl font-bold text-gray-900 dark:text-white">ORD-1002</h1>
               </div>
               <div className="text-left md:text-right">
@@ -48,7 +48,7 @@ export default function TrackOrderPage() {
                   initial={{ width: 0 }}
                   animate={{ width: `${(currentStepIndex / (TRACKING_STEPS.length - 1)) * 100}%` }}
                   transition={{ duration: 1, ease: "easeOut" }}
-                  className="h-full bg-gradient-to-r from-pink-500 to-rose-400"
+                  className="h-full bg-primary"
                 />
               </div>
 
@@ -66,8 +66,8 @@ export default function TrackOrderPage() {
                         animate={{ scale: 1 }}
                         transition={{ delay: index * 0.1 }}
                         className={`relative z-10 w-16 h-16 rounded-2xl flex items-center justify-center shadow-lg transition-colors duration-300 ${
-                          isCompleted ? 'bg-pink-500 text-white' : 
-                          isActive ? 'bg-white dark:bg-gray-800 text-pink-500 border-2 border-pink-500 ring-4 ring-pink-50 dark:ring-pink-900/20' : 
+                          isCompleted ? 'bg-primary text-white' : 
+                          isActive ? 'bg-white dark:bg-gray-800 text-primary border-2 border-primary ring-4 ring-primary/5 dark:ring-primary/20' : 
                           'bg-gray-50 dark:bg-white/5 text-gray-300'
                         }`}
                       >
@@ -81,7 +81,7 @@ export default function TrackOrderPage() {
 
                       {/* Step Info */}
                       <div className="text-left md:text-center space-y-1">
-                        <p className={`font-bold text-sm md:text-base ${isActive ? 'text-pink-600' : 'text-gray-900 dark:text-gray-200'}`}>
+                        <p className={`font-bold text-sm md:text-base ${isActive ? 'text-primary' : 'text-gray-900 dark:text-gray-200'}`}>
                           {step.label}
                         </p>
                         <p className="text-xs text-gray-500 max-w-[150px] leading-relaxed">
@@ -91,7 +91,7 @@ export default function TrackOrderPage() {
                           <motion.div 
                             animate={{ opacity: [0, 1, 0] }}
                             transition={{ duration: 2, repeat: Infinity }}
-                            className="text-[10px] font-bold text-pink-500 uppercase tracking-tighter"
+                            className="text-[10px] font-bold text-primary uppercase tracking-tighter"
                           >
                             In Progress
                           </motion.div>
@@ -110,7 +110,7 @@ export default function TrackOrderPage() {
               <div className="space-y-4">
                 <h3 className="font-bold text-gray-900 dark:text-white">Delivery Address</h3>
                 <div className="flex gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-white/10 flex items-center justify-center flex-shrink-0 shadow-sm text-pink-500">
+                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-white/10 flex items-center justify-center flex-shrink-0 shadow-sm text-primary">
                     <Home className="w-5 h-5" />
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">

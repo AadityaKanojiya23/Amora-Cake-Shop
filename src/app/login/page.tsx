@@ -40,9 +40,9 @@ export default function LoginPage() {
         transition={{ duration: 0.5 }}
         className="w-full max-w-md"
       >
-        <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl shadow-pink-100 dark:shadow-none border border-gray-100 dark:border-white/10 p-8 md:p-10">
+        <div className="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl shadow-primary/10 dark:shadow-none border border-gray-100 dark:border-white/10 p-8 md:p-10">
           <div className="text-center mb-10">
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-pink-500 to-rose-400 bg-clip-text text-transparent mb-2">
+            <h1 className="text-3xl font-bold text-primary mb-2">
               Welcome Back
             </h1>
             <p className="text-gray-500 dark:text-gray-400">
@@ -73,7 +73,7 @@ export default function LoginPage() {
                 <label className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   Password
                 </label>
-                <Link href="#" className="text-xs text-pink-500 hover:underline">
+                <Link href="#" className="text-xs text-primary hover:underline">
                   Forgot password?
                 </Link>
               </div>
@@ -99,7 +99,7 @@ export default function LoginPage() {
             <Button
               type="submit"
               disabled={isLoading}
-              className="w-full h-12 rounded-xl bg-gradient-to-r from-pink-500 to-rose-400 hover:from-pink-600 hover:to-rose-500 text-white font-semibold shadow-lg shadow-pink-200 dark:shadow-none transition-all duration-300 group"
+              className="w-full h-12 rounded-xl bg-primary hover:bg-primary/90 text-white font-semibold shadow-lg shadow-primary/20 dark:shadow-none transition-all duration-300 group"
             >
               {isLoading ? (
                 <Loader2 className="w-5 h-5 animate-spin" />
@@ -114,7 +114,7 @@ export default function LoginPage() {
 
           <div className="mt-8 text-center text-sm text-gray-500">
             Don't have an account?{" "}
-            <Link href="/signup" className="text-pink-500 font-semibold hover:underline">
+            <Link href="/signup" className="text-primary font-semibold hover:underline">
               Create one for free
             </Link>
           </div>

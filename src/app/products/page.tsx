@@ -38,7 +38,7 @@ export default function ProductsPage() {
       {/* Header Section */}
       <div className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-white/10 pt-28 pb-12 px-4 lg:px-8">
         <div className="container mx-auto">
-          <Link href="/" className="inline-flex items-center gap-2 text-sm text-pink-500 font-bold mb-6 hover:gap-3 transition-all">
+          <Link href="/" className="inline-flex items-center gap-2 text-sm text-primary font-bold mb-6 hover:gap-3 transition-all">
             <ArrowLeft className="w-4 h-4" />
             Back to Home
           </Link>
@@ -46,7 +46,7 @@ export default function ProductsPage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
             <div>
               <h1 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4">
-                Our Signature <span className="text-pink-500">Cakes</span>
+                Our Signature <span className="text-primary">Cakes</span>
               </h1>
               <p className="text-gray-500 dark:text-gray-400 max-w-xl">
                 Explore our collection of 50 handcrafted masterpieces, each baked with love and the finest ingredients.
@@ -58,14 +58,14 @@ export default function ProductsPage() {
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                 <Input
                   placeholder="Search for your favorite cake..."
-                  className="pl-10 h-12 rounded-2xl border-gray-200 dark:bg-black/40 focus:ring-pink-500"
+                  className="pl-10 h-12 rounded-2xl border-gray-200 dark:bg-black/40 focus:ring-primary"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
               </div>
               <div className="relative">
                 <select
-                  className="appearance-none h-12 px-6 pr-12 rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-black/40 text-sm font-medium focus:ring-2 focus:ring-pink-500 focus:outline-none cursor-pointer"
+                  className="appearance-none h-12 px-6 pr-12 rounded-2xl border border-gray-200 dark:border-white/10 bg-white dark:bg-black/40 text-sm font-medium focus:ring-2 focus:ring-primary focus:outline-none cursor-pointer"
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
                 >
@@ -101,7 +101,7 @@ export default function ProductsPage() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className="group relative bg-white dark:bg-gray-900 rounded-3xl p-4 border border-gray-100 dark:border-white/10 hover:shadow-2xl hover:shadow-pink-100 dark:hover:shadow-none transition-all duration-500"
+                className="group relative bg-white dark:bg-gray-900 rounded-3xl p-4 border border-gray-100 dark:border-white/10 hover:shadow-2xl hover:shadow-primary/10 dark:hover:shadow-none transition-all duration-500"
               >
                 {/* Badges */}
                 <div className="absolute top-6 left-6 z-10 flex flex-col gap-2">
@@ -111,7 +111,7 @@ export default function ProductsPage() {
                     </span>
                   )}
                   {product.isNew && (
-                    <span className="bg-pink-500 text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
+                    <span className="bg-primary text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
                       New Arrival
                     </span>
                   )}
@@ -131,13 +131,13 @@ export default function ProductsPage() {
                 {/* Info */}
                 <div className="space-y-2 px-1">
                   <div className="flex justify-between items-start">
-                    <p className="text-xs font-bold text-pink-500 uppercase tracking-wider">Premium Cake</p>
+                    <p className="text-xs font-bold text-primary uppercase tracking-wider">Premium Cake</p>
                     <div className="flex items-center gap-1 text-yellow-500">
                       <Star className="w-3 h-3 fill-current" />
                       <span className="text-xs font-bold text-gray-600 dark:text-gray-400">{product.rating.toFixed(1)}</span>
                     </div>
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 dark:text-white line-clamp-1 group-hover:text-pink-600 transition-colors">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white line-clamp-1 group-hover:text-primary transition-colors">
                     {product.name}
                   </h3>
                   <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed">
@@ -150,7 +150,7 @@ export default function ProductsPage() {
                     </p>
                     <Button 
                       size="sm" 
-                      className="rounded-xl bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-pink-500 dark:hover:bg-pink-500 dark:hover:text-white transition-all duration-300"
+                      className="rounded-xl bg-gray-900 dark:bg-white text-white dark:text-black hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all duration-300"
                     >
                       Order Now
                     </Button>

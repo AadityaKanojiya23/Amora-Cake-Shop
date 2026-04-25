@@ -28,6 +28,9 @@
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
 
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
@@ -35,26 +38,26 @@
 
 @layer base {
   :root, .vanilla {
-    /* Vanilla Cake Light Theme */
-    --background: 40 50% 98%; /* Warm vanilla white */
-    --foreground: 20 40% 15%; /* Dark chocolate text */
-    --card: 0 0% 100%; /* Pure white icing */
-    --card-foreground: 20 40% 15%;
+    /* Logo-Inspired Yellow/Orange Theme */
+    --background: 48 100% 94%; /* Distinct yellow background */
+    --foreground: 212 66% 17%; /* Dark blue from logo text */
+    --card: 0 0% 100%;
+    --card-foreground: 212 66% 17%;
     --popover: 0 0% 100%;
-    --popover-foreground: 20 40% 15%;
-    --primary: 345 80% 55%; /* Strawberry/Cherry pink */
+    --popover-foreground: 212 66% 17%;
+    --primary: 28 91% 54%; /* Orange from logo circle */
     --primary-foreground: 0 0% 100%;
-    --secondary: 40 50% 92%; /* Buttercream */
-    --secondary-foreground: 20 40% 15%;
-    --muted: 40 30% 94%;
-    --muted-foreground: 20 20% 45%;
-    --accent: 40 50% 92%;
-    --accent-foreground: 20 40% 15%;
+    --secondary: 48 85% 62%; /* Yellow from logo star */
+    --secondary-foreground: 212 66% 17%;
+    --muted: 48 30% 94%;
+    --muted-foreground: 212 20% 45%;
+    --accent: 48 85% 92%; /* Pale yellow accent */
+    --accent-foreground: 212 66% 17%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
-    --border: 40 20% 88%;
-    --input: 40 20% 88%;
-    --ring: 345 80% 55%;
+    --border: 48 20% 88%;
+    --input: 48 20% 88%;
+    --ring: 28 91% 54%;
     --radius: 1rem;
   }
 
